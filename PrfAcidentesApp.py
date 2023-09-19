@@ -81,11 +81,11 @@ with st.container():
         st.map(carregar_dados())
     else:
         print('Error')
-'''
-with st.container():
-    if tabela.checkbox("Mostrar tabela de dados"):
-        st.subheader('Base de dados geral')
-        st.write(carregar_dados())
-    else:
-        print('error')
-'''
+
+#with st.container():
+    #if tabela.checkbox("Mostrar tabela de dados"):
+        #st.subheader('Base de dados geral')
+        #st.write(carregar_dados())
+    #else:
+        #print('error')
+
