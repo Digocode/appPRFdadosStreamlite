@@ -15,7 +15,7 @@ def carregar_dados():
     return dataset
 
 with st.container():
-    menu
+    #menu
     bar = st.sidebar
     menu = bar.selectbox('MENU',['Escoha a opção para visualizar','Gráficos', 'Estatistica'])
     #checkbox tabela
