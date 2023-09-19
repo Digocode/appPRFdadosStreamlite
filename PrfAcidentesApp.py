@@ -14,8 +14,8 @@ with st.container():
     bar = st.sidebar
     menu = bar.selectbox('MENU',['Escoha a opção para visualizar','Gráficos', 'Estatistica'])
     #checkbox tabela
-    st.sidebar.subheader('TABELA')
-    tabela = st.sidebar.empty()
+    #st.sidebar.subheader('TABELA')
+    #tabela = st.sidebar.empty()
     #checkbox mapa
     st.sidebar.subheader('MAPA')
     mapa = st.sidebar.empty()
@@ -48,7 +48,7 @@ with st.container():
                 dados_filtrados = acidentes_dados[
                     (acidentes_dados['data_inversa'] >= inicio) & (acidentes_dados['data_inversa'] < fim)]
 
-                # Crie o gráfico de área com base nos dados filtrados
+                # gráfico de área com base nos dados filtrados
                 st.bar_chart(dados_filtrados, x='data_inversa', y=var)
             else:
                 # Se o mês não estiver na lista de meses, exiba uma mensagem de erro
@@ -81,10 +81,11 @@ with st.container():
         st.map(carregar_dados())
     else:
         print('Error')
-
+'''
 with st.container():
     if tabela.checkbox("Mostrar tabela de dados"):
         st.subheader('Base de dados geral')
         st.write(carregar_dados())
     else:
         print('error')
+'''
