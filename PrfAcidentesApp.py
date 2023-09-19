@@ -1,8 +1,13 @@
 import pandas as pd
 import streamlit as st
-from spacy import load
 
-nlp = load('pt_core_news_lg')
+st.set_page_config(
+    page_title="Dashboards PRF",
+    page_icon=":bar_chart:",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+
+)
 
 @st.cache_data #Otimiza carregamentos dos dados
 def carregar_dados():
@@ -10,12 +15,12 @@ def carregar_dados():
     return dataset
 
 with st.container():
-    #menu
+    menu
     bar = st.sidebar
     menu = bar.selectbox('MENU',['Escoha a opção para visualizar','Gráficos', 'Estatistica'])
-    #checkbox tabela
-    #st.sidebar.subheader('TABELA')
-    #tabela = st.sidebar.empty()
+    checkbox tabela
+    st.sidebar.subheader('TABELA')
+    tabela = st.sidebar.empty()
     #checkbox mapa
     st.sidebar.subheader('MAPA')
     mapa = st.sidebar.empty()
@@ -82,10 +87,10 @@ with st.container():
     else:
         print('Error')
 
-#with st.container():
-    #if tabela.checkbox("Mostrar tabela de dados"):
-        #st.subheader('Base de dados geral')
-        #st.write(carregar_dados())
-    #else:
-        #print('error')
+with st.container():
+    if tabela.checkbox("Mostrar tabela de dados"):
+        st.subheader('Base de dados geral')
+        st.write(carregar_dados())
+    else:
+        print('error')
 
