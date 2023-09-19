@@ -1,8 +1,13 @@
 import pandas as pd
 import streamlit as st
-from spacy import load
 
-nlp = load('pt_core_news_lg')
+st.set_page_config(
+    page_title="Dashboards PRF",
+    page_icon=":bar_chart:",
+    layout="wide",
+    initial_sidebar_state="collapsed"
+
+)
 
 @st.cache_data #Otimiza carregamentos dos dados
 def carregar_dados():
@@ -10,10 +15,10 @@ def carregar_dados():
     return dataset
 
 with st.container():
-    #menu
+    menu
     bar = st.sidebar
     menu = bar.selectbox('MENU',['Escoha a opção para visualizar','Gráficos', 'Estatistica'])
-    #checkbox tabela
+    checkbox tabela
     st.sidebar.subheader('TABELA')
     tabela = st.sidebar.empty()
     #checkbox mapa
@@ -48,7 +53,7 @@ with st.container():
                 dados_filtrados = acidentes_dados[
                     (acidentes_dados['data_inversa'] >= inicio) & (acidentes_dados['data_inversa'] < fim)]
 
-                # Crie o gráfico de área com base nos dados filtrados
+                # gráfico de área com base nos dados filtrados
                 st.bar_chart(dados_filtrados, x='data_inversa', y=var)
             else:
                 # Se o mês não estiver na lista de meses, exiba uma mensagem de erro
@@ -88,3 +93,4 @@ with st.container():
         st.write(carregar_dados())
     else:
         print('error')
+
