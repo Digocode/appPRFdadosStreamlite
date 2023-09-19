@@ -18,7 +18,7 @@ with st.container():
     menu
     bar = st.sidebar
     menu = bar.selectbox('MENU',['Escoha a opção para visualizar','Gráficos', 'Estatistica'])
-    checkbox tabela
+    #checkbox tabela
     st.sidebar.subheader('TABELA')
     tabela = st.sidebar.empty()
     #checkbox mapa
